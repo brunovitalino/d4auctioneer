@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: D4 Auctioneer
+
+dtrade:
+  api:
+    url: https://d4.trade
