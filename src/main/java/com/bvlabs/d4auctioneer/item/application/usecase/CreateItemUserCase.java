@@ -1,7 +1,7 @@
 package com.bvlabs.d4auctioneer.item.application.usecase;
 
-import com.bvlabs.d4auctioneer.dtrade.application.port.in.FindItemDTradeInputPort;
-import com.bvlabs.d4auctioneer.dtrade.domain.model.ItemDTrade;
+import com.bvlabs.d4auctioneer.dtrade.item.application.port.in.FindItemDTradeInputPort;
+import com.bvlabs.d4auctioneer.dtrade.item.domain.model.ItemDTrade;
 import com.bvlabs.d4auctioneer.item.application.port.in.CreateItemInputPort;
 import com.bvlabs.d4auctioneer.item.application.port.out.ItemRepositoryOutPort;
 import com.bvlabs.d4auctioneer.item.domain.model.Item;

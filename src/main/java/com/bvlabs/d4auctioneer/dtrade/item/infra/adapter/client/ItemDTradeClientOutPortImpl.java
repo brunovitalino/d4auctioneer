@@ -1,8 +1,8 @@
-package com.bvlabs.d4auctioneer.dtrade.infra.adapter.client;
+package com.bvlabs.d4auctioneer.dtrade.item.infra.adapter.client;
 
-import com.bvlabs.d4auctioneer.dtrade.application.port.out.ItemDTradeClientOutPort;
-import com.bvlabs.d4auctioneer.dtrade.domain.model.ItemDTrade;
-import com.bvlabs.d4auctioneer.dtrade.infra.dto.ItemDTradeResponse;
+import com.bvlabs.d4auctioneer.dtrade.item.application.port.out.ItemDTradeClientOutPort;
+import com.bvlabs.d4auctioneer.dtrade.item.domain.model.ItemDTrade;
+import com.bvlabs.d4auctioneer.dtrade.item.infra.dto.ItemDTradeResponse;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,8 +1,8 @@
-package com.bvlabs.d4auctioneer.dtrade.application.usecase;
+package com.bvlabs.d4auctioneer.dtrade.item.application.usecase;
 
-import com.bvlabs.d4auctioneer.dtrade.application.port.in.FindItemDTradeInputPort;
-import com.bvlabs.d4auctioneer.dtrade.application.port.out.ItemDTradeClientOutPort;
-import com.bvlabs.d4auctioneer.dtrade.domain.model.ItemDTrade;
+import com.bvlabs.d4auctioneer.dtrade.item.application.port.in.FindItemDTradeInputPort;
+import com.bvlabs.d4auctioneer.dtrade.item.application.port.out.ItemDTradeClientOutPort;
+import com.bvlabs.d4auctioneer.dtrade.item.domain.model.ItemDTrade;
 import org.springframework.stereotype.Service;
 
 @Service

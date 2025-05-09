@@ -1,4 +1,4 @@
-package com.bvlabs.d4auctioneer.dtrade.infra.dto;
+package com.bvlabs.d4auctioneer.dtrade.item.infra.dto;
 
 public record ItemDTradeResponse(
         String id,

@@ -1,7 +1,6 @@
-package com.bvlabs.d4auctioneer.dtrade.infra.adapter.client;
+package com.bvlabs.d4auctioneer.dtrade.item.infra.adapter.client;
 
-import com.bvlabs.d4auctioneer.dtrade.infra.dto.ItemDTradeResponse;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.bvlabs.d4auctioneer.dtrade.item.infra.dto.ItemDTradeResponse;
 import org.springframework.web.bind.annotation.PathVariable;
 
 //@FeignClient(itemDTradeId = "itemDTradeClient", url = "${dtrade.api.url}")
