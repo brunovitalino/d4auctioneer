@@ -2,6 +2,7 @@ spring:
   application:
     name: D4 Auctioneer
 
-dtrade:
-  api:
-    url: https://d4.trade
+feign:
+  dtrade:
+    api:
+      url: "https://diablo.trade/api/items/search?cursor=1&incense=Song%20of%20the%20Mountain&mode=season%20softcore&rune=Bac&sort=lowest&type=WTB"
