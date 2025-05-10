@@ -1,0 +1,25 @@
+package com.bvlabs.d4auctioneer.dtrade.item.infra.adapter.client;
+
+import com.bvlabs.d4auctioneer.dtrade.item.application.port.out.SearchDTradeClientOutPort;
+import com.bvlabs.d4auctioneer.dtrade.item.domain.model.ItemDTrade;
+import com.bvlabs.d4auctioneer.dtrade.item.domain.model.SeasonType;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class SearchDTradeClientOutPortImpl implements SearchDTradeClientOutPort {
+
+    private final DTradeFeignClient dTradeFeignClient;
+
+    public SearchDTradeClientOutPortImpl(DTradeFeignClient dTradeFeignClient) {
+        this.dTradeFeignClient = dTradeFeignClient;
+    }
+
+    @Override
+    public List<ItemDTrade> search(Integer pageNumber, String seasonTypeDescription, String runeName) {
+        var seasonType = SeasonType.getSeasonTypeByDescription(seasonTypeDescription);
+        var itemDTradeListResponse = dTradeFeignClient.search(pageNumber, seasonType.getDescription(), runeName);
+        return itemDTradeListResponse.data().stream().map(ItemDTrade::new).toList();
+    }
+}
