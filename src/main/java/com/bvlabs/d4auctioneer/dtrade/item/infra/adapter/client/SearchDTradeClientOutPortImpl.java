@@ -5,6 +5,7 @@ import com.bvlabs.d4auctioneer.dtrade.item.domain.model.ItemDTrade;
 import com.bvlabs.d4auctioneer.dtrade.item.domain.model.SeasonType;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Component
@@ -17,9 +18,9 @@ public class SearchDTradeClientOutPortImpl implements SearchDTradeClientOutPort 
     }
 
     @Override
-    public List<ItemDTrade> search(Integer pageNumber, String seasonTypeDescription, String runeName) {
+    public List<ItemDTrade> search(Integer pageNumber, String seasonTypeDescription, String runeName, BigDecimal minAcceptableValue) {
         var seasonType = SeasonType.getSeasonTypeByDescription(seasonTypeDescription);
-        var itemDTradeListResponse = dTradeFeignClient.search(pageNumber, seasonType.getDescription(), runeName);
+        var itemDTradeListResponse = dTradeFeignClient.search(pageNumber, seasonType.getDescription(), runeName, minAcceptableValue);
         return itemDTradeListResponse.data().stream().map(ItemDTrade::new).toList();
     }
 }

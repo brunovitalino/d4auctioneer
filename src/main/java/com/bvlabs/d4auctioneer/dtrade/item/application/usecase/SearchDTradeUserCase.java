@@ -5,6 +5,7 @@ import com.bvlabs.d4auctioneer.dtrade.item.application.port.out.SearchDTradeClie
 import com.bvlabs.d4auctioneer.dtrade.item.domain.model.ItemDTrade;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -17,7 +18,7 @@ public class SearchDTradeUserCase implements SearchDTradeInputPort {
     }
 
     @Override
-    public List<ItemDTrade> search(Integer pageNumber, String seasonType, String runeName) {
-        return searchDTradeClientOutPort.search(pageNumber, seasonType, runeName);
+    public List<ItemDTrade> search(Integer pageNumber, String seasonType, String runeName, BigDecimal minAcceptableValue) {
+        return searchDTradeClientOutPort.search(pageNumber, seasonType, runeName, minAcceptableValue);
     }
 }

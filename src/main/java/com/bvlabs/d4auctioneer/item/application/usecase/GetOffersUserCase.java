@@ -30,7 +30,7 @@ public class GetOffersUserCase implements GetOffersInputPort {
 
         List<Offer> offers = new ArrayList<>();
         for (String runeName : runeNames) {
-            var runeItemDTradeList = searchDTradeInputPort.search(request.pageNumber(), request.seasonType(), runeName);
+            var runeItemDTradeList = searchDTradeInputPort.search(request.pageNumber(), request.seasonType(), runeName, request.minAcceptableValue());
 
             try {
                 Thread.sleep(500);
