@@ -18,7 +18,8 @@ public class SearchDTradeUserCase implements SearchDTradeInputPort {
     }
 
     @Override
-    public List<ItemDTrade> search(Integer pageNumber, String seasonType, String runeName, BigDecimal minAcceptableValue) {
-        return searchDTradeClientOutPort.search(pageNumber, seasonType, runeName, minAcceptableValue);
+    public List<ItemDTrade> search(Integer pageNumber, String seasonType, String searchType,
+            String runeName, BigDecimal minAcceptableValue) {
+        return searchDTradeClientOutPort.search(pageNumber, seasonType, searchType, runeName, minAcceptableValue);
     }
 }

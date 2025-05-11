@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 public record GetOffersRequest(
         Integer pageNumber,
         String seasonType,
+        String searchType,
         String runeNames,
         BigDecimal minAcceptableValue,
         BigDecimal desirableValue,

@@ -6,5 +6,6 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface SearchDTradeInputPort {
-    List<ItemDTrade> search(Integer pageNumber, String seasonType, String runeName, BigDecimal minAcceptableValue);
+    List<ItemDTrade> search(Integer pageNumber, String seasonType, String searchType,
+            String runeName, BigDecimal minAcceptableValue);
 }
