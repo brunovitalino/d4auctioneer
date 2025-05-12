@@ -8,10 +8,10 @@ import com.bvlabs.d4auctioneer.item.infra.dto.GetOffersRequest;
 import com.bvlabs.d4auctioneer.item.infra.dto.GetOffersResponse;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,21 +24,18 @@ public class GetOffersUserCase implements GetOffersInputPort {
     }
 
     @Override
-    public GetOffersResponse getOffers(GetOffersRequest request) {
-
+    public GetOffersResponse getOffersForDesirableValue(GetOffersRequest request) {
         var runeNames = Arrays.stream(request.runeNames().split(",")).map(String::trim).collect(Collectors.toSet());
+        List<Offer> offers = getAllOffersForEachRune(runeNames, request);
+        return new GetOffersResponse(offers);
+    }
 
+    private List<Offer> getAllOffersForEachRune(Set<String> runeNames, GetOffersRequest request) {
         List<Offer> offers = new ArrayList<>();
         for (String runeName : runeNames) {
             var runeItemDTradeList = searchDTradeInputPort.search(request.pageNumber(), request.seasonType(), request.searchType(),
                 runeName, request.minAcceptableValue());
-
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                throw new RuntimeException("Interrupted during sleep", e);
-            }
+            delay(500);
 
             if (runeItemDTradeList.isEmpty()) continue;
 
@@ -49,7 +46,15 @@ public class GetOffersUserCase implements GetOffersInputPort {
 
             offers.add(new Offer(runeName, request.desirableValue(), desirableValueWithLessThanOrEqualOffer, otherValuesWithOffers, ItemType.Consumable));
         }
+        return offers;
+    }
 
-        return new GetOffersResponse(offers);
+    private static void delay(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Interrupted during sleep", e);
+        }
     }
 }

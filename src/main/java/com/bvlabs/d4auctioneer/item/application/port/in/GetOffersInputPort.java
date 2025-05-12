@@ -4,5 +4,5 @@ import com.bvlabs.d4auctioneer.item.infra.dto.GetOffersRequest;
 import com.bvlabs.d4auctioneer.item.infra.dto.GetOffersResponse;
 
 public interface GetOffersInputPort {
-    public GetOffersResponse getOffers(GetOffersRequest request);
+    public GetOffersResponse getOffersForDesirableValue(GetOffersRequest request);
 }
