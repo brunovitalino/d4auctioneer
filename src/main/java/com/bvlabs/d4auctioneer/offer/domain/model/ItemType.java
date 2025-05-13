@@ -1,4 +1,4 @@
-package com.bvlabs.d4auctioneer.item.domain.model;
+package com.bvlabs.d4auctioneer.offer.domain.model;
 
 public enum ItemType {
     Equipment("EQUIPMENT"), Consumable("CONSUMABLE");

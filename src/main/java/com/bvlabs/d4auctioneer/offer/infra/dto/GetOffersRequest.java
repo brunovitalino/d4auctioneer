@@ -1,6 +1,5 @@
-package com.bvlabs.d4auctioneer.item.infra.dto;
+package com.bvlabs.d4auctioneer.offer.infra.dto;
 
-import com.bvlabs.d4auctioneer.item.domain.model.ItemType;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.math.BigDecimal;

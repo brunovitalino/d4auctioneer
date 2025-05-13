@@ -1,4 +1,4 @@
-package com.bvlabs.d4auctioneer.item.domain.model;
+package com.bvlabs.d4auctioneer.offer.domain.model;
 
 import java.math.BigDecimal;
 

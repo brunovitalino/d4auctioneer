@@ -1,14 +1,11 @@
-package com.bvlabs.d4auctioneer.item.infra.adapter.controller;
+package com.bvlabs.d4auctioneer.offer.infra.adapter.controller;
 
-import com.bvlabs.d4auctioneer.item.application.port.in.GetOffersInputPort;
-import com.bvlabs.d4auctioneer.item.infra.dto.GetOffersRequest;
-import com.bvlabs.d4auctioneer.item.infra.dto.GetOffersResponse;
+import com.bvlabs.d4auctioneer.offer.application.port.in.GetOffersInputPort;
+import com.bvlabs.d4auctioneer.offer.infra.dto.GetOffersRequest;
+import com.bvlabs.d4auctioneer.offer.infra.dto.GetOffersResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
-import org.springframework.http.HttpStatus;
+import io.swagger.v3.oas.annotations.Parameters;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +22,9 @@ public class OfferController {
     }
 
     @GetMapping()
+    @Parameters({
+            @Parameter(ref = "#/components/parameters/x-d4trade-token")
+    })
     @Operation(summary = "Get the number of sellers with the minimum acceptable value.")
     public ResponseEntity<GetOffersResponse> read(
             @Parameter(name = "pageNumber", description = "Marketplace Page Number", example = "1") @RequestParam Integer pageNumber,
