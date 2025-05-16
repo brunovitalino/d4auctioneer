@@ -1,7 +1,7 @@
 package com.bvlabs.d4auctioneer.offer.application.usercase;
 
-import com.bvlabs.d4auctioneer.offer.domain.model.ItemType;
-import com.bvlabs.d4auctioneer.offer.domain.model.Offer;
+import com.bvlabs.d4auctioneer.domain.model.item.ItemCategory;
+import com.bvlabs.d4auctioneer.domain.model.offer.Offer;
 
 import java.math.BigDecimal;
 
@@ -10,7 +10,7 @@ public class OfferBuilder {
     BigDecimal desirableValue;
     Integer desirableValueWithLessThanOrEqualOffer;
     Integer otherValuesWithOffers;
-    ItemType itemType;
+    ItemCategory itemCategory;
 
     public OfferBuilder withRuneName(String runeName) {
         this.runeName = runeName;
@@ -32,13 +32,13 @@ public class OfferBuilder {
         return this;
     }
 
-    public OfferBuilder withItemType(ItemType itemType) {
-        this.itemType = itemType;
+    public OfferBuilder withItemType(ItemCategory itemCategory) {
+        this.itemCategory = itemCategory;
         return this;
     }
 
     public Offer build() {
         return new Offer(this.runeName, this.desirableValue, this.desirableValueWithLessThanOrEqualOffer,
-                this.otherValuesWithOffers, this.itemType);
+                this.otherValuesWithOffers, this.itemCategory);
     }
 }

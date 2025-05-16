@@ -1,7 +1,6 @@
 package com.bvlabs.d4auctioneer.offer.domain.model;
 
-import com.bvlabs.d4auctioneer.offer.infra.dto.GetOffersRequest;
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.bvlabs.d4auctioneer.infra.dto.offer.GetOffersRequest;
 
 import java.math.BigDecimal;
 
