@@ -5,4 +5,5 @@ spring:
 feign:
   dtrade:
     api:
-      url: "https://diablo.trade/api"
+      url: 'https://diablo.trade/api'
+      token: '${d4trade_token}'

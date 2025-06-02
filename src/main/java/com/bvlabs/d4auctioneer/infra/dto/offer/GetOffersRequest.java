@@ -13,7 +13,7 @@ public record GetOffersRequest(
         String transactionType,
         @Schema(example = "Vex,Kaa")
         String runeNames,
-        @Schema(example = "200000000")
+        @Schema(example = "19000000")
         BigDecimal minAcceptableValue,
         @Schema(example = "300000000")
         BigDecimal desirableValue
