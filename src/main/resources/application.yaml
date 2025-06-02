@@ -6,4 +6,4 @@ feign:
   dtrade:
     api:
       url: 'https://diablo.trade/api'
-      token: '${d4trade_token}'
+      token: '${DTRADE_TOKEN:without-d4trade-token}'

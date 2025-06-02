@@ -1,0 +1,23 @@
+version: '3'
+
+networks:
+  public:
+
+services:
+  d4auctioneer-api:
+    container_name: d4auctioneer-api
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    image: docker.io/brunovitalino/d4auctioneer-api-image:latest
+    environment:
+      DTRADE_TOKEN: 'my-d4trade-token'
+    ports:
+      - 3000:8080
+    networks:
+      - public
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 1048576
+        hard: 1048576
