@@ -8,9 +8,6 @@ RUN ["mvn", "clean", "package", "-Dmaven.test.skip"]
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 ARG JAR_FILE=/buildfiles/target/*jar
-COPY --from=build ${JAR_FILE} yessir-api.jar
+COPY --from=build ${JAR_FILE} d4auctioneer-api.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "yessir-api.jar"]
-
-# mvn clean package -Dmaven.test.skip
-# java -Dspring.profiles.active=default -jar target/*jar
+ENTRYPOINT ["java", "-Dspring.profiles.active=default", "-Dd4trade_token=MY_D4TRADE_TOKEN", "-jar", "d4auctioneer-api.jar"]
